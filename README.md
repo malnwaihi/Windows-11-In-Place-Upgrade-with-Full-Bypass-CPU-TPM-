@@ -47,14 +47,17 @@ The script will auto‑elevate to Administrator if needed.
 
 ✅ Interactive menu – check compatibility, disk space, ISO language, set drive, and perform upgrade.
 ````
+
 📋 Prerequisites
+````
 A mounted Windows 11 ISO (drive letter will be prompted).
 
 At least 8 GB free disk space (only if patching is needed, for temporary copy of the ISO).
 
 Run the script – it will auto‑elevate.
-
+````
 🚀 Quick Start
+````
 Mount the Windows 11 ISO (double‑click it) – ensure it appears as a drive.
 
 Run the one‑liner above (or download the script and run it manually).
@@ -70,8 +73,9 @@ Option 4 to perform the upgrade.
 Follow the on‑screen instructions. Setup will launch with the GUI; confirm “Keep personal files and apps” is selected.
 
 The system will reboot several times. After completion, you’ll be running Windows 11.
-
+````
 🛠 How It Works
+````
 Registry Bypass – Adds LabConfig keys to HKLM\SYSTEM\Setup to disable hardware checks.
 
 Method 1 – Launches setup.exe with /product server /auto upgrade .... This makes Setup think it’s upgrading a Server edition, which ignores consumer hardware requirements.
@@ -81,8 +85,9 @@ If Method 1 fails, it copies the ISO contents to a temporary folder, replaces so
 On success, the temporary folder is deleted and the bypass registry keys are removed. Logs and exit codes help diagnose any issues.
 
 Note: When using /product server, the Setup GUI says “Installing Windows Server” – this is normal. You are actually installing Windows 11.
-
+````
 📦 Configuration
+````
 At the top of the script, you can adjust:
 
 $patchAppraiser – Set to $false to disable the second method.
@@ -90,13 +95,15 @@ $patchAppraiser – Set to $false to disable the second method.
 $tempFolder – Change the location for the temporary ISO copy.
 
 The drive letter is prompted each time you run the script, so no need to hardcode.
-
+````
 ❗ Disclaimer
+````
 This script is provided as‑is for educational and convenience purposes. Bypassing hardware requirements may lead to an unstable system or unsupported configurations. Use at your own risk. Always back up important data before performing an upgrade.
-
+````
 📄 License
+````
 This project is licensed under the MIT License – see the LICENSE file for details.
-
+````
 🤝 Contributing
 Feel free to open issues or submit pull requests with improvements. Please ensure any changes are well tested.
 
