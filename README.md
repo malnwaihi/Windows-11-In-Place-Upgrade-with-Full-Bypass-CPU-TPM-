@@ -20,7 +20,7 @@ It preserves all apps, personal files, and settings – **no data loss**.
 To download and run the script in one step, copy and paste this command into **PowerShell as Administrator**:
 
 ```powershell
-Set-ExecutionPolicy -ExecutionPolicy Bypass -Scope Process -Force; iex ((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercontent.com/malnwaihi/windows11-upgrade-bypass/main/Upgrade-Windows11.ps1'))
+Set-ExecutionPolicy -ExecutionPolicy Bypass -Scope Process -Force; iex ((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercontent.com/malnwaihi/Windows-11-In-Place-Upgrade-with-Full-Bypass-CPU-TPM-/main/Upgrade-Windows11.ps1'))
 ````
 ⚠️ Important:
 
