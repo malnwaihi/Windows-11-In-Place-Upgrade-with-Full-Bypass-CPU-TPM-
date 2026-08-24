@@ -21,7 +21,7 @@ To download and run the script in one step, copy and paste this command into **P
 
 ```powershell
 Set-ExecutionPolicy -ExecutionPolicy Bypass -Scope Process -Force; iex ((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercontent.com/malnwaihi/windows11-upgrade-bypass/main/Upgrade-Windows11.ps1'))
-
+````
 ⚠️ Important:
 
 This command temporarily bypasses the execution policy only for the current PowerShell session.
