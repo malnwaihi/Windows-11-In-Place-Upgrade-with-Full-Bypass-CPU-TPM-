@@ -31,7 +31,7 @@ It downloads the script directly from GitHub and runs it immediately.
 Always review scripts downloaded from the internet before running them.
 
 The script will auto‑elevate to Administrator if needed.
-
+````
 🔧 Features
 ✅ Preserves files and applications – it’s an upgrade, not a clean install.
 
@@ -46,7 +46,7 @@ The script will auto‑elevate to Administrator if needed.
 ✅ Self‑elevation – automatically restarts as Administrator.
 
 ✅ Interactive menu – check compatibility, disk space, ISO language, set drive, and perform upgrade.
-
+````
 📋 Prerequisites
 A mounted Windows 11 ISO (drive letter will be prompted).
 
