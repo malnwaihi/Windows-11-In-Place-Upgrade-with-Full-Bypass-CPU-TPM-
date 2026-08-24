@@ -1,0 +1,45 @@
+# Windows PowerShell temporary files
+*.ps1~
+*.ps1.bak
+*.tmp
+*.log
+*.psd1
+*.psm1
+
+# Compiled PowerShell scripts
+*.ps1exe
+*.exe
+
+# User-specific files
+*.user
+*.suo
+
+# Visual Studio / VS Code
+.vs/
+.vscode/
+*.code-workspace
+
+# Temp folders created by the script
+Win11_Upgrade_Temp/
+C:\Win11_Upgrade_Temp
+
+# Windows built-in folders
+$WINDOWS.~BT
+$WINDOWS.~LS
+Windows.old
+
+# Thumbnails
+Thumbs.db
+Desktop.ini
+
+# PowerShell module cache
+Modules/
+__pycache__/
+
+# Backup files
+*.bak
+*.backup
+
+# Log files
+*.log
+logs/
