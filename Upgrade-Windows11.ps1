@@ -30,10 +30,26 @@ $global:DisclaimerShown = $false
 # --- Display Banner (exact RDP Multi-Session Enabler style) ---
 function Show-Banner {
     Clear-Host
-    Write-Host "=============================================" -ForegroundColor $bannerColor
-    Write-Host "  Windows 11 Upgrade Assistant (Bypass Mode)  " -ForegroundColor $bannerColor
-    Write-Host "               v1.0                            " -ForegroundColor $bannerColor
-    Write-Host "=============================================" -ForegroundColor $bannerColor
+    Write-Host "`n"
+    Write-Host "╔════════════════════════════════════════════════════════════╗" -ForegroundColor Cyan
+    Write-Host "║                                                            ║" -ForegroundColor Cyan
+    Write-Host "║      WINDOWS 11 UPGRADE ASSISTANT (BYPASS MODE)            ║" -ForegroundColor Cyan
+    Write-Host "║                      v1.0                                  ║" -ForegroundColor Cyan
+    Write-Host "║                                                            ║" -ForegroundColor Cyan
+    Write-Host "║      Bypass: CPU | TPM | SecureBoot | RAM | Storage        ║" -ForegroundColor Cyan
+    Write-Host "║                                                            ║" -ForegroundColor Cyan
+    Write-Host "║      Created by malnwaihi                                  ║" -ForegroundColor Cyan
+    Write-Host "║      github.com/malnwaihi                                  ║" -ForegroundColor Cyan
+    Write-Host "║                                                            ║" -ForegroundColor Cyan
+    Write-Host "╚════════════════════════════════════════════════════════════╝" -ForegroundColor Cyan
+    Write-Host ""
+    if ($global:ISODrive) {
+        Write-Host "  [INFO] ISO Drive: $global:ISODrive" -ForegroundColor Green
+    } else {
+        Write-Host "  [INFO] ISO Drive: Not set" -ForegroundColor Yellow
+    }
+    Write-Host ""
+    Write-Host "─────────────────────────────────────────────────────────────" -ForegroundColor Cyan
     Write-Host ""
 }
 
