@@ -2,8 +2,8 @@
 
 [![PowerShell](https://img.shields.io/badge/PowerShell-5.1+-blue)](https://github.com/PowerShell/PowerShell)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![GitHub Stars](https://img.shields.io/github/stars/malnwaihi/windows11-upgrade-bypass)](https://github.com/malnwaihi/windows11-upgrade-bypass/stargazers)
-[![GitHub Issues](https://img.shields.io/github/issues/malnwaihi/windows11-upgrade-bypass)](https://github.com/malnwaihi/windows11-upgrade-bypass/issues)
+[![GitHub Stars](https://img.shields.io/github/stars/malnwaihi/Windows-11-In-Place-Upgrade-with-Full-Bypass-CPU-TPM-)](https://github.com/malnwaihi/Windows-11-In-Place-Upgrade-with-Full-Bypass-CPU-TPM-/stargazers)
+[![GitHub Issues](https://img.shields.io/github/issues/malnwaihi/Windows-11-In-Place-Upgrade-with-Full-Bypass-CPU-TPM-)](https://github.com/malnwaihi/Windows-11-In-Place-Upgrade-with-Full-Bypass-CPU-TPM-/issues)
 
 **A PowerShell script to perform an in‑place upgrade (repair install) of Windows 11 on unsupported hardware, bypassing CPU, TPM, SecureBoot, RAM, and storage checks.**
 
