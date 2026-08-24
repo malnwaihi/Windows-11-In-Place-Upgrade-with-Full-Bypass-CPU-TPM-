@@ -13,7 +13,7 @@ if (-NOT ([Security.Principal.WindowsPrincipal] [Security.Principal.WindowsIdent
     exit
 }
 
-# --- Theme colors (exactly like RDP Multi-Session Enabler) ---
+# --- Theme colors ---
 $bannerColor = "Cyan"
 $menuColor = "Cyan"
 $infoColor = "Cyan"
@@ -27,7 +27,7 @@ $tempFolder = "C:\Win11_Upgrade_Temp"
 $global:ISODrive = $null
 $global:DisclaimerShown = $false
 
-# --- Display Banner (exact RDP Multi-Session Enabler style) ---
+# --- Display Banner (ASCII version - no encoding issues) ---
 function Show-Banner {
     Clear-Host
     Write-Host ""
@@ -47,9 +47,10 @@ function Show-Banner {
         Write-Host "  [INFO] ISO Drive: Not set" -ForegroundColor Yellow
     }
     Write-Host ""
-    Write-Host "─────────────────────────────────────────────────────────────" -ForegroundColor Cyan
+    Write-Host "-------------------------------------------------------------" -ForegroundColor Cyan
     Write-Host ""
 }
+
 # --- Display Disclaimer (once) ---
 function Show-Disclaimer {
     Write-Host "=============================================" -ForegroundColor $errorColor
