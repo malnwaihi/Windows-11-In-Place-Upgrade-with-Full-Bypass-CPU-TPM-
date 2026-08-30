@@ -1,0 +1,40 @@
+name: Create Release
+
+on:
+  push:
+    tags:
+      - 'v*'           # 推送以 'v' 开头的标签时触发，如 v1.0.0
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v6
+
+      - name: Generate Release Notes
+        id: release_notes
+        shell: pwsh
+        run: |
+          # 获取当前标签对应的版本号
+          $tag = "${{ github.ref_name }}"
+          $version = $tag.TrimStart('v')
+          # 从 CHANGELOG.md 中提取对应版本的更新日志
+          $changelog = Get-Content -Path CHANGELOG.md -Raw
+          if ($changelog -match "## \[$version\](.*?)(?=\n## |\Z)") {
+            $notes = $matches[1].Trim()
+          } else {
+            $notes = "No release notes found for version $version."
+          }
+          # 将更新日志写入输出，供后续步骤使用
+          $notes | Out-File -FilePath release_notes.txt -Encoding utf8
+          Write-Host "Release notes generated."
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          body_path: release_notes.txt
+          draft: false
+          prerelease: false
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
