@@ -1,0 +1,34 @@
+name: Test PowerShell Script
+
+on:
+  push:
+    paths:
+      - '*.ps1'
+      - 'tests/*.ps1'
+  pull_request:
+    paths:
+      - '*.ps1'
+      - 'tests/*.ps1'
+
+jobs:
+  test:
+    runs-on: windows-latest
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v6
+
+      - name: Install Pester
+        shell: pwsh
+        run: |
+          Install-Module -Name Pester -Force -SkipPublisherCheck -Scope CurrentUser
+
+      - name: Run Pester Tests
+        shell: pwsh
+        run: |
+          # 导入主脚本，使其函数在测试中可用
+          . .\Upgrade-Windows11.ps1
+          $config = New-PesterConfiguration -Hashtable @{
+            Run = @{ Path = 'tests' }
+            Output = @{ Verbosity = 'Detailed' }
+          }
+          Invoke-Pester -Configuration $config
