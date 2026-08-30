@@ -1,0 +1,29 @@
+name: Validate PowerShell Script
+
+on:
+  push:
+    paths:
+      - '*.ps1'          # 当任何 .ps1 文件被推送时触发
+  pull_request:
+    paths:
+      - '*.ps1'
+
+jobs:
+  validate:
+    runs-on: windows-latest
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v6
+
+      - name: Check PowerShell script syntax
+        shell: pwsh
+        run: |
+          $ErrorActionPreference = 'Stop'
+          # 对仓库中所有 .ps1 文件进行语法检查
+          $files = Get-ChildItem -Path . -Filter *.ps1 -Recurse
+          foreach ($file in $files) {
+            Write-Host "Validating $($file.Name)..."
+            $content = Get-Content -Path $file.FullName -Raw
+            [System.Management.Automation.PSParser]::Tokenize($content, [ref]$null) | Out-Null
+          }
+          Write-Host "All scripts are syntactically valid."
